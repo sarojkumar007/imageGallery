@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+:root{
+    --color: crimson;
+    --grad: linear-gradient(to right, #154276, #ff5353);
+    --grad-2: linear-gradient(to left, #154276, #ff5353);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+header{
+    width: 100%;
+    min-height: 75px;
+    background-image: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 0 0 20px;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px #81818177;
+}
+.top-bar{
+    width:100%;
+    height:3px;
+    background-image: var(--grad);
+}
+.heading{
+    padding-top: 20px;
+    font-weight: 600;
+}
+.main{
+    height: calc(100vh - 93px);
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+.nav{
+    flex: 0 0 250px;
+    display:flex;
+    overflow-y: scroll;
+    min-height: calc(100vh - 100px);
+    /*overflow-x: hidden;*/
+}
+.side-div{
+    flex: 0 0 200px;
+    /*background-color: blueviolet;*/
+}
+.section-image-show{
+    flex: 1;
+    /*background-color: crimson;*/
+}
+.link_list{display: block; width: 100%;}
+.link_list:not(:last-child){
+    margin-bottom: 10px;
+}
+.link{
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 16px;
+    background-color: #ddd;
+    transition: background-image .3s, color .3s;
+    text-decoration: none;
+    font-weight: bold;
+}
+.link:hover{
+    background-image: var(--grad);
+    color: #fff;
+    text-decoration: none;
+}
+.carousel-indicators{margin: 0;}
+.carousel{height: 100%;}
+.carousel-item img {height: 100%;}
+.carousel-control-next,.carousel-control-prev{height: 75%;}
+.carousel-caption{width: 100%; left: 0;right: 0; background-color: #44444488;bottom: 0;}
+.title-c{font-size: 2.25rem !important; color: #fff; filter: drop-shadow(0 3px 6px blue);}
+.btn{
+    font-size: 17px;
+    padding: 7px 12px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    color: #fff;
+    transition: box-shadow .2s, transform .2s;
+    background-image: var(--grad);
+    backface-visibility:hidden;
+    margin-right: 30px;
+    backface-visibility: hidden;
+}
+.btn:hover,.btn:focus{
+    box-shadow: 0 2px 4px #232323;
+    outline: none;
+    transform: translateY(-3px);
+}
+.btn:active{
+    box-shadow: 0 1px 2px #232323;
+    transform: translateY(-1px);
+}
+.menu-bar{
+    width: 100%;
+    height: 50px;
+    background-color: #555 !important;
+    margin-bottom: 20px;
+}
+.menu-bar > a {
+    color: #efefef;
+}
+.head-2{
+    width: 100%;
+    min-height: 35px;
+    background-image: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 20px 0;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 1px solid #81818177;
+}
+
+/**************************************/
+.view-img-container{
+    width: 100%;
+    min-height: calc(100vh - 159px);
+    background-color: #ddd;
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+.card{
+    width: 240px;
+    padding: 14px 14px 1px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px #989898d2;
+    margin: 0 20px 20px;
+}
+.card-image{
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(85%);
+    transition: transform 1s,filter 1s;
+    transform-origin: 50% 50%;
+}
+.card-download{
+    padding:10px 0 10px 10px;
+    width: 100%;
+    text-align: right;
+}
+.download-btn{
+    display: inline-block;
+    font-size: 14px;
+    padding: 7px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 600;
+    transition: background-color .2s;
+}
+.download-btn:hover,.download-btn:focus{
+    background-color: #ddd;
+}
+.image:hover{
+    transform: scale(1.2);
+    filter: grayscale(0);
+}
+
+/*****************************************************/
+
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+/********FOR MODAL********/
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+
+
+</style>
